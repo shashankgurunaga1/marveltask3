@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recipe for Sambar Powder</title>
+
+</head>
+<body>
+    <h1>Sambar Powder</h1>
+    <h2>Roast the Spices</h2>
+
+    <p align="center">
+        Enter the number of people for whom the food is to be made <input type="number" id="n"><br>
+        
+        <button  type="button"  class="btn btn-primary" onClick="thenRecipe(document.getElementById('n').value)">Click for Recipe!</button>
+    </p>
+    
+    <p  align="center" id="p13"></p>
+    
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+    <p id="p7"></p>
+    <p id="p8"></p>
+    <p id="p9"></p>
+    <p id="p10"></p>
+    <p id="p11"></p>
+    <p id="p12"></p>
+
+    <script>
+        function thenRecipe(n){
+         
+        let promise1 = new Promise((resolve, reject) => {
+
+        if(n<=0){
+            resolve('Success');
+        }else{
+            reject('failed')
+        }
+    }
+    )
+
+        promise1.then((messege) => {
+        document.getElementById("p13").innerHTML="Provide an amount greater than zero to get your DESIRED recipe";
+    }).catch((messege) =>{
+        document.getElementById("p1").innerHTML="1.Heat a pan and then add "+Math.floor(n/2)+" cup coriander seeds and 2 tablespoons cumin seeds.";
+        document.getElementById("p2").innerHTML="2.On a low heat, roast the coriander and cumin, stirring often, until they become fragrant and change color.";
+        document.getElementById("p3").innerHTML="3.It takes roughly 1 to 2 minutes to roast these spices over a low heat. They should smell aromatic. Do not brown them too much.";
+        document.getElementById("p4").innerHTML="4.Remove them from the pan and add them to a large plate or tray.";
+        document.getElementById("p5").innerHTML="5.Wipe the pan with a cotton napkin and add "+ 16*n+" to " +18*n +" dry red chilies. Be sure to remove the crown and the seeds from the red chilies before roasting them.";
+        document.getElementById("p6").innerHTML="6.Roast the red chilies, stirring them till they change color and release a pungent smoky aroma. Place the roasted red chilies on the same plate as your other toasted spices.";
+        document.getElementById("p7").innerHTML="7.Add "+Math.floor(n/2)+" teaspoons fenugreek seeds (methi seeds). Stir often and roast them.";
+        document.getElementById("p8").innerHTML="8.Roast till they get browned, but be careful not to burn them.";
+        document.getElementById("p9").innerHTML="9.Remove to the same plate. ";
+        document.getElementById("p10").innerHTML="10.Add"+n+"tablespoon whole black peppercorns (sabut kalimirch).";
+        document.getElementById("p11").innerHTML="11.Stir often and roast.";
+        document.getElementById("p12"),innerHTML="12.As soon as the black pepper becomes aromatic, remove them from the pan, to the same plate where all the spices are kept.";
+         })
+        }
+    </script>
+
+</body>
+</html>
